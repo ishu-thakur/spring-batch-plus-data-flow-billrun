@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/springBatch
+    username: root
+    password: root
+    initialization-mode: always
+  liquibase:
+    change-log: classpath:db.changelog/db.changelog-master.xml
+#    user: root
+#    password: root
+#    enabled: true
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  batch:
+    jdbc:
+      initialize-schema: always
